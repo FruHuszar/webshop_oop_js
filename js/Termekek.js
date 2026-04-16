@@ -16,9 +16,22 @@ export default class Termekek {
   }
 
   megjelenitAdmin() {
-    this.szuloElem.innerHTML = "";
+    kod = `
+            <table>
+                <tr>
+                    <th>Név</th>
+                    <th>Leírás</th>
+                    <th>Ár</th>
+                    <th>Értékelés</th>
+                </tr>
+                <tbody></tbody>
+            </table>
+          `;
+    this.szuloElem.insertAdjacentHTML("beforeend", kod);
+    this.tbodyElem = document.querySelector("table tbody");
+    console.log(tbodyElem);
     this.#lista.forEach((elem, i) => {
-      const ta = new TermekAdmin(elem, this.szuloElem);
+      const ta = new TermekAdmin(elem, this.tbodyElem);
     });
     console.log("Termékadmin");
   }
