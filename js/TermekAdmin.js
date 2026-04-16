@@ -13,21 +13,13 @@ export default class TermekAdmin {
 
   megjelenit() {
     let html = `
-                <table>
-                    <tr>
-                        <th>Név</th>
-                        <th>Leírás</th>
-                        <th>Ár</th>
-                        <th>Értékelés</th>
-                    </tr>
-                    <tr>
-                        <td>${this.#obj.nev}</td>
-                        <td>${this.#obj.leiras}</td>
-                        <td>${this.#obj.ar}</td>
-                        <td>${this.#obj.ertekeles}</td>
-                    </tr>
-                    </table>
-                `;
+        <tr>
+            <td>${this.#obj.nev}</td>
+            <td>${this.#obj.leiras}</td>
+            <td>${this.#obj.ar}</td>
+            <td>${this.#obj.ertekeles}</td>
+        </tr>
+               `;
     this.szuloELem.insertAdjacentHTML("beforeend", html);
   }
 }
