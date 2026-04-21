@@ -1,13 +1,14 @@
-import TermekAdmin from "./TermekAdmin.js";
-import TermekPublic from "./TermekPublic.js";
-
 export default class Termekek {
   #lista = [];
   #adminE = false;
+
   constructor(lista, szuloElem, adminE) {
     this.#lista = lista;
     this.szuloElem = szuloElem;
     this.#adminE = adminE;
+    
+    this.szuloElem.innerHTML = "";
+
     if (this.#adminE) {
       this.megjelenitAdmin();
     } else {
@@ -16,31 +17,31 @@ export default class Termekek {
   }
 
   megjelenitAdmin() {
-    kod = `
+    let kod = `
             <table>
-                <tr>
-                    <th>Név</th>
-                    <th>Leírás</th>
-                    <th>Ár</th>
-                    <th>Értékelés</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Leírás</th>
+                        <th>Ár</th>
+                        <th>Értékelés</th>
+                        <th>Törlés</th>
+                    </tr>
+                </thead>
                 <tbody></tbody>
             </table>
           `;
     this.szuloElem.insertAdjacentHTML("beforeend", kod);
-    this.tbodyElem = document.querySelector("table tbody");
-    console.log(tbodyElem);
+    this.tbodyElem = this.szuloElem.querySelector("tbody");
+    
     this.#lista.forEach((elem, i) => {
-      const ta = new TermekAdmin(elem, this.tbodyElem);
+      new TermekAdmin(elem, this.tbodyElem, i);
     });
-    console.log("Termékadmin");
   }
 
   megjelenitPublic() {
-    this.szuloElem.innerHTML = "";
     this.#lista.forEach((elem, i) => {
-      const tp = new TermekPublic(elem, this.szuloElem);
+      new TermekPublic(elem, this.szuloElem);
     });
-    console.log("Termékpublic");
   }
 }
