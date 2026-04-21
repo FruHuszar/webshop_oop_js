@@ -11,3 +11,11 @@ window.addEventListener("torles", (event) => {
     termekLista.splice(index, 1);
     new Termekek(termekLista, szuloELem, isAdminOldal);
 });
+
+const kosarLista = []
+
+window.addEventListener("kosarba", (event) => {
+    kosarLista.push(event.detail);
+    console.log("Kosár: ", kosarLista)
+});
+    

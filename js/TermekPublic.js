@@ -1,3 +1,5 @@
+import { termekLista } from "./termekLista.js";
+
 export default class TermekPublic{
 
     #obj = {};
@@ -11,6 +13,7 @@ export default class TermekPublic{
 
         this.buttonELem.addEventListener("click", (event) => {
             console.log(event.target)
+            this.kosarbaEsemeny()
         })
     }
 
@@ -20,7 +23,7 @@ export default class TermekPublic{
         <img src = "${this.#obj.kep}" alt="${this.#obj.nev}">
         <p>${this.#obj.nev} , ${this.#obj.ar}</p>
         <p>${this.#obj.leiras}</p>
-        <button>Kosárba</button>
+        <button class="kosarba">Kosárba</button>
         </div>
         `;
 
@@ -30,6 +33,14 @@ export default class TermekPublic{
     getObj(){
         return this.#obj
     }
+
+    kosarbaEsemeny(){
+        console.log("kosárba esemeny")
+        const e = new CustomEvent("kosarba", {detail:this.#obj})
+        window.dispatchEvent(e);
+        console.log(this.#obj)
+    }
+
 }
 
 
