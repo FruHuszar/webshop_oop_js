@@ -21,8 +21,8 @@ export default class TermekPublic{
         let kod = `
         <div class="kartya card col-sm-3" style = "width:400px ">
         <img class ="card-img-top img-fluid" style= "height:300px" src = "${this.#obj.kep}" alt="${this.#obj.nev}">
-        <p class="card-title">${this.#obj.nev} , ${this.#obj.ar}</p>
-        <p class="card-text">${this.#obj.leiras}</p>
+        <p class="card-title h2 text-center">${this.#obj.nev} , ${this.#obj.ar}</p>
+        <p class="card-text text-center">${this.#obj.leiras}</p>
         <button class="kosarba btn btn-primary">Kosárba</button>
         </div>
         `;
