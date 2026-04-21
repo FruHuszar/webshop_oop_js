@@ -1,3 +1,6 @@
+import TermekAdmin from "./TermekAdmin.js";
+import TermekPublic from "./TermekPublic.js";
+
 export default class Termekek {
   #lista = [];
   #adminE = false;

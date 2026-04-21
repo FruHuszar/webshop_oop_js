@@ -19,6 +19,7 @@ body {
   background-color: var(--bg);
   color: var(--betu);
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
