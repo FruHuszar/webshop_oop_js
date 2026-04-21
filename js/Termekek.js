@@ -1,5 +1,6 @@
 import TermekAdmin from "./TermekAdmin.js";
 import TermekPublic from "./TermekPublic.js";
+import TermekUrlap from "./TermekUrlap.js";
 
 export default class Termekek {
   #lista = [];
@@ -36,6 +37,8 @@ export default class Termekek {
           `;
     this.szuloElem.insertAdjacentHTML("beforeend", kod);
     this.tbodyElem = this.szuloElem.querySelector("tbody");
+
+    new TermekUrlap(this.tbodyElem);
 
     this.#lista.forEach((elem, i) => {
       new TermekAdmin(elem, this.tbodyElem, i);

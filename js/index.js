@@ -7,15 +7,20 @@ const isAdminOldal = window.location.pathname.includes("admin.html");
 new Termekek(termekLista, szuloELem, isAdminOldal);
 
 window.addEventListener("torles", (event) => {
-    const index = event.detail;
-    termekLista.splice(index, 1);
-    new Termekek(termekLista, szuloELem, isAdminOldal);
+  const index = event.detail;
+  termekLista.splice(index, 1);
+  new Termekek(termekLista, szuloELem, isAdminOldal);
 });
 
-const kosarLista = []
+const kosarLista = [];
 
 window.addEventListener("kosarba", (event) => {
-    kosarLista.push(event.detail);
-    console.log("Kosár: ", kosarLista)
+  kosarLista.push(event.detail);
+  console.log("Kosár: ", kosarLista);
 });
-    
+
+window.addEventListener("ujElemHozzaadas", (event) => {
+  const ujTermek = event.detail;
+  termekLista.push(ujTermek);
+  new Termekek(termekLista, szuloELem, isAdminOldal);
+});
