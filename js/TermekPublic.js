@@ -18,11 +18,11 @@ export default class TermekPublic {
 
   megjelenitPublic() {
     let kod = `
-        <div class="kartya">
-        <img src = "${this.#obj.kep}" alt="${this.#obj.nev}">
-        <p>${this.#obj.nev} , ${this.#obj.ar}</p>
-        <p>${this.#obj.leiras}</p>
-        <button class="kosarba">Kosárba</button>
+        <div class="kartya card col-sm-3" style = "width:400px ">
+        <img class ="card-img-top img-fluid" style= "height:300px" src = "${this.#obj.kep}" alt="${this.#obj.nev}">
+        <p class="card-title">${this.#obj.nev} , ${this.#obj.ar}</p>
+        <p class="card-text">${this.#obj.leiras}</p>
+        <button class="kosarba btn btn-primary">Kosárba</button>
         </div>
         `;
 
