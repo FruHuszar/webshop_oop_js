@@ -28,7 +28,7 @@ export default class TermekAdmin {
             <td>${this.#obj.leiras}</td>
             <td>${this.#obj.ar}</td>
             <td>${this.#obj.ertekeles}</td>
-            <td><button class="torol btn btn-outline-dark"">X</button></td>
+            <td><button class="torol btn btn-outline-dark">✕</button></td>
         </tr>
                `;
     this.szuloElem.insertAdjacentHTML("beforeend", html);

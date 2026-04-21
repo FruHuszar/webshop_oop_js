@@ -33,9 +33,9 @@ export default class TermekUrlap {
         <tr class="urlap-sor">
             <td><input type="text" id="unev" placeholder="Név"></td>
             <td><input type="text" id="uleiras" placeholder="Leírás"></td>
-            <td><input type="number" id="uar" placeholder="Ár"></td>
-            <td><input type="number" id="uertekeles" placeholder="Értékelés"></td>
-            <td><button id="mentes">Mentés</button></td>
+            <td><input type="number" id="uar" placeholder="Ár" min="500" max="20000" step="10"></td>
+            <td><input type="number" id="uertekeles" placeholder="Értékelés" min="1.0" max="5.0" step="0.1"></td>
+            <td><button id="mentes" class="btn btn-outline-dark">✓</button></td>
         </tr>
                `;
     this.szuloElem.insertAdjacentHTML("afterbegin", html);
