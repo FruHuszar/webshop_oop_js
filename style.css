@@ -1,10 +1,14 @@
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 *:focus-visible {
   outline: 2px solid #ffd700;
   outline-offset: 2px;
+}
+
+.auto-hyphen {
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }

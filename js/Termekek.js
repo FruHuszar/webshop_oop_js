@@ -9,7 +9,7 @@ export default class Termekek {
     this.#lista = lista;
     this.szuloElem = szuloElem;
     this.#adminE = adminE;
-    
+
     this.szuloElem.innerHTML = "";
 
     if (this.#adminE) {
@@ -21,14 +21,14 @@ export default class Termekek {
 
   megjelenitAdmin() {
     let kod = `
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>Név</th>
-                        <th>Leírás</th>
-                        <th>Ár</th>
-                        <th>Értékelés</th>
-                        <th>Törlés</th>
+                        <th scope="col">Név</th>
+                        <th scope="col">Leírás</th>
+                        <th scope="col">Ár</th>
+                        <th scope="col">★</th>
+                        <th scope="col">Törlés</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -36,7 +36,7 @@ export default class Termekek {
           `;
     this.szuloElem.insertAdjacentHTML("beforeend", kod);
     this.tbodyElem = this.szuloElem.querySelector("tbody");
-    
+
     this.#lista.forEach((elem, i) => {
       new TermekAdmin(elem, this.tbodyElem, i);
     });
