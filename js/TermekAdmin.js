@@ -1,14 +1,24 @@
 export default class TermekAdmin {
   #obj = {};
-  constructor(obj = { nev, leiras, kep, ar, ertekeles }, szuloELem) {
+  #index;
+
+  constructor(obj, szuloElem, index) {
     this.#obj = obj;
-    this.szuloELem = szuloELem;
+    this.szuloElem = szuloElem;
+    this.#index = index;
     this.megjelenit();
 
-    /*const kepElem = document.querySelector(".kep:last-child");
-        kepElem.addEventListener("click", (event)=> {
-            this.esemeny()
-        })*/
+    this.torolGomb = this.szuloElem.querySelector("tr:last-child .torol");
+    this.torolGomb.addEventListener("click", () => {
+      this.kattintasEsemeny();
+    });
+  }
+
+  kattintasEsemeny() {
+    const esemeny = new CustomEvent("torles", {
+      detail: this.#index,
+    });
+    window.dispatchEvent(esemeny);
   }
 
   megjelenit() {
@@ -18,8 +28,9 @@ export default class TermekAdmin {
             <td>${this.#obj.leiras}</td>
             <td>${this.#obj.ar}</td>
             <td>${this.#obj.ertekeles}</td>
+            <td><button class="torol">X</button></td>
         </tr>
                `;
-    this.szuloELem.insertAdjacentHTML("beforeend", html);
+    this.szuloElem.insertAdjacentHTML("beforeend", html);
   }
 }
