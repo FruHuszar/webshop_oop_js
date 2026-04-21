@@ -1,8 +1,15 @@
-import TermekPublic from "./TermekPublic.js";
 import { termekLista } from "./termekLista.js";
-import TermekAdmin from "./TermekAdmin.js";
+import Termekek from "./Termekek.js";
 
+const szuloELem = document.querySelector(".tarolo");
 
-const szuloELem = document. querySelector(".tarolo");
+new Termekek(termekLista, szuloELem, true);
 
-new Termekek(termekLista, szuloELem)
+window.addEventListener("torles", (event) => {
+    const index = event.detail;
+    
+    termekLista.splice(index, 1);
+    
+    szuloELem.innerHTML = "";
+    new Termekek(termekLista, szuloELem, true);
+});
