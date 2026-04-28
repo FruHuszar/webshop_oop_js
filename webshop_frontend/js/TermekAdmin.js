@@ -16,7 +16,7 @@ export default class TermekAdmin {
 
   kattintasEsemeny() {
     const esemeny = new CustomEvent("torles", {
-      detail: this.#index,
+      detail: this.#obj.id,
     });
     window.dispatchEvent(esemeny);
   }
